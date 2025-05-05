@@ -110,3 +110,8 @@ vrf_service=#
 
 ```
 ## 参考
+- https://holesky.etherscan.io/address/0x139afdecf7fc799d59bd3b915252944f73e155d5#code
+- https://holesky.etherscan.io/tx/0xe5dc744dd3fd3a97d5c6cf4d0683a94487394d97a276ef401e74f76444e9c1ba
+- https://holesky.etherscan.io/address/0x139afdecf7fc799d59bd3b915252944f73e155d5#code
+- https://holesky.etherscan.io/address/0x00189cae228389b61f68b4e3520393941daad6e1#writeContract
+- https://holesky.etherscan.io/tx/0xe5dc744dd3fd3a97d5c6cf4d0683a94487394d97a276ef401e74f76444e9c1ba
