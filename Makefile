@@ -12,7 +12,7 @@ VRF_ABI_ARTIFACT := ./abis/VerifyRandVRF.sol/VerifyRandVRF.json
 FACTORY_ABI_ARTIFACT := ./abis/VerifyRandVRFFactory.sol/VerifyRandVRFFactory.json
 
 VRFService:
-	env GO111MODULE=on go build $(LDFLAGS) ./cmd/VRFService
+	env GO111MODULE=on go build $(LDFLAGS) ./cmd/vrf_service
 
 clean:
 	rm VRFService

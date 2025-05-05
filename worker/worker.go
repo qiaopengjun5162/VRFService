@@ -63,21 +63,21 @@ func (wk *Worker) Close() error {
 }
 
 func (wk *Worker) ProcessCallerVrf() error {
-	// 获取 RequestSent 合约事件
+	// 1. 获取 RequestSent 合约事件
 	requestUnsentList, err := wk.db.RequestSend.QueryUnHandleRequestSendList()
 	if err != nil {
 		log.Error("query unhandled request sent list fail", "err", err)
 		return err
 	}
 	for _, requestUnsent := range requestUnsentList {
-		// 组装随机数据列表交易发到 Vrf 合约
+		// 2. 组装随机数据列表交易发到 Vrf 合约
 		txReceipt, err := wk.deg.FulfillRandomWords(requestUnsent.RequestId, nil)
 		if err != nil {
 			log.Error("Fulfill random words fail", "err", err)
 			return err
 		}
 		if txReceipt.Status == 1 {
-			// 更新 RequestSent 合约事件表的状态
+			// 3. 更新 RequestSent 合约事件表的状态
 			err := wk.db.RequestSend.MarkRequestSendFinish(requestUnsent)
 			if err != nil {
 				log.Error("mark request sent event list fail", "err", err)
@@ -87,7 +87,3 @@ func (wk *Worker) ProcessCallerVrf() error {
 	}
 	return nil
 }
-
-/*
-
- */

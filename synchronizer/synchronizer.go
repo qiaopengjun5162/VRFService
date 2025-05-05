@@ -112,7 +112,7 @@ func (syncer *Synchronizer) Start() error {
 	return nil
 }
 
-func (syncer *Synchronizer) processBatch(headers []types.Header, chainCfg *config.ChainConfig) error {
+func (syncer *Synchronizer) processBatch(headers []types.Header, _ *config.ChainConfig) error {
 	if len(headers) == 0 {
 		return nil
 	}
